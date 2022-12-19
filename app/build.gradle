@@ -6,12 +6,12 @@ plugins {
 
 android {
     namespace 'com.example.locationdemoproject'
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.example.locationdemoproject"
         minSdk 21
-        targetSdk 32
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
@@ -49,5 +49,4 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
     implementation 'com.google.android.gms:play-services-location:21.0.1'
     implementation 'com.google.android.gms:play-services-maps:18.1.0'
-    implementation 'com.github.malikdawar:drawroute:1.1-rx'
 }

@@ -10,7 +10,6 @@ import android.location.Geocoder
 import android.location.Location
 import android.location.LocationManager
 import android.net.ConnectivityManager
-import android.net.NetworkCapabilities
 import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
@@ -18,11 +17,17 @@ import android.view.View
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.AppCompatTextView
+import androidx.appcompat.widget.Toolbar
 import androidx.core.app.ActivityCompat
+import androidx.viewpager2.widget.ViewPager2
+import com.example.locationdemoproject.adapter.ViewPagerAdapter
+import com.example.locationdemoproject.fragments.DeviceInfoFragment
+import com.example.locationdemoproject.fragments.LocationFragment
+import com.example.locationdemoproject.fragments.NetworkFragment
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
-import com.google.firebase.crashlytics.buildtools.reloc.org.apache.http.conn.util.InetAddressUtils
+import com.google.android.material.tabs.TabLayout
+import com.google.android.material.tabs.TabLayoutMediator
 import java.io.BufferedInputStream
 import java.io.BufferedReader
 import java.io.InputStream
@@ -37,23 +42,52 @@ import java.util.concurrent.FutureTask
 open class MainActivity : AppCompatActivity() {
     private lateinit var mFusedLocationClient: FusedLocationProviderClient
     private val permissionId = 2
-    private var tvLocation: AppCompatTextView? = null
-    private var tvDeviceIp: AppCompatTextView? = null
-    private var tvConnectionType: AppCompatTextView? = null
-    private var tvAddress: AppCompatTextView? = null
     var newAddress: String? = null
+
+    private lateinit var viewPager2: ViewPager2
+    private lateinit var tabLayout: TabLayout
+    private var toolbar: Toolbar? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        initViews()
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
+        initViews()
+        initTabs()
+
+
+        setSupportActionBar(toolbar)
+    }
+
+    private fun initTabs() {
+
+        // Initializing the ViewPagerAdapter
+        val adapter = ViewPagerAdapter(this)
+
+        // add fragment to the list
+        adapter.addFragment(LocationFragment(), "Location")
+        adapter.addFragment(DeviceInfoFragment(), "Device Info")
+        adapter.addFragment(NetworkFragment(), "Network")
+
+        // Adding the Adapter to the ViewPager
+        viewPager2.adapter = adapter
+
+        TabLayoutMediator(tabLayout, viewPager2) { tab, position ->
+            if (position == 0) {
+                tab.text = "Location"
+            } else if (position == 1) {
+                tab.text = "Device Info"
+            } else if (position == 2) {
+                tab.text = "Network"
+            }
+
+        }.attach()
     }
 
     private fun initViews() {
-        tvLocation = findViewById(R.id.tvLocation)
-        tvDeviceIp = findViewById(R.id.tvDeviceIp)
-        tvConnectionType = findViewById(R.id.tvConnectionType)
-        tvAddress = findViewById(R.id.tvAddress)
+        viewPager2 = findViewById(R.id.viewPager)
+        tabLayout = findViewById(R.id.tabLayout)
+        toolbar = findViewById(R.id.toolbar)
     }
 
     @SuppressLint("MissingPermission", "SetTextI18n")
@@ -64,14 +98,15 @@ open class MainActivity : AppCompatActivity() {
                     val location: Location? = task.result
                     if (location != null) {
                         val geocoder = Geocoder(this, Locale.getDefault())
-                        val list: List<Address>? = geocoder.getFromLocation(location.latitude, location.longitude, 1)
-                        val fullAddress = "Address: "+getFormattedAddress(list!!)
-                        tvAddress?.text = fullAddress
+                        val list: List<Address>? =
+                            geocoder.getFromLocation(location.latitude, location.longitude, 1)
+                        val fullAddress = "Address: " + getFormattedAddress(list!!)
+                        /*tvAddress?.text = fullAddress
                         tvLocation?.text = "Latitude: ${location.latitude}\nLongitude: ${location.longitude}," +
-                                "\nCountry Code: ${list[0].countryCode}"
+                                "\nCountry Code: ${list[0].countryCode}"*/
 
-                    }else{
-                        tvLocation?.text = "Location not found, Please try again."
+                    } else {
+//                        tvLocation?.text = "Location not found, Please try again."
                     }
                 }
             } else {
@@ -90,6 +125,7 @@ open class MainActivity : AppCompatActivity() {
             LocationManager.NETWORK_PROVIDER
         )
     }
+
     private fun checkPermissions(): Boolean {
         if (ActivityCompat.checkSelfPermission(
                 this,
@@ -104,6 +140,7 @@ open class MainActivity : AppCompatActivity() {
         }
         return false
     }
+
     private fun requestPermissions() {
         ActivityCompat.requestPermissions(
             this,
@@ -114,6 +151,7 @@ open class MainActivity : AppCompatActivity() {
             permissionId
         )
     }
+
     @SuppressLint("MissingSuperCall")
     override fun onRequestPermissionsResult(
         requestCode: Int,
@@ -138,7 +176,7 @@ open class MainActivity : AppCompatActivity() {
         val currentNetwork = connectivityManager.activeNetwork
         val acN = connectivityManager.getNetworkCapabilities(currentNetwork)
         if (acN != null) {
-            if (acN.hasTransport(NetworkCapabilities.TRANSPORT_WIFI)){
+            /*if (acN.hasTransport(NetworkCapabilities.TRANSPORT_WIFI)){
                 tvConnectionType?.text = "Connection Type : Wifi"
                 val ipAddress = getLocalIpAddress()
                 val publicIp = getPublicIPAddress()
@@ -148,7 +186,7 @@ open class MainActivity : AppCompatActivity() {
                 val ipAddress = getLocalIpAddress()
                 val publicIp = getPublicIPAddress()
                 tvDeviceIp?.text = "Your Device IP Address: $ipAddress \n Public ip: $publicIp"
-            }
+            }*/
         }
     }
 
