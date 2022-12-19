@@ -1,4 +1,7 @@
 <resources>
-    <string name="app_name">DeviceInformation</string>
+    <string name="app_name">Device Information</string>
     <string name="title_activity_maps">MapsActivity</string>
+    <string name="home_fragment">Home Fragment</string>
+    <string name="sport_fragment">Sport Fragment</string>
+    <string name="movie_fragment">Movie Fragment</string>
 </resources>
