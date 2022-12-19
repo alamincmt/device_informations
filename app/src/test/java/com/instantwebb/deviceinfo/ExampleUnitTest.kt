@@ -1,4 +1,4 @@
-package com.example.locationdemoproject
+package com.instantwebb.deviceinfo
 
 import org.junit.Test
 

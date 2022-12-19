@@ -1,10 +1,10 @@
-package com.example.locationdemoproject.fragments
+package com.instantwebb.deviceinfo.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.locationdemoproject.R
+import com.instantwebb.deviceinfo.R
 
 class DeviceInfoFragment : Fragment() {
     // inflate the layout

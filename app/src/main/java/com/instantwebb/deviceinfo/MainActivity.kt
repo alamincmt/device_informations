@@ -1,4 +1,4 @@
-package com.example.locationdemoproject
+package com.instantwebb.deviceinfo
 
 import android.Manifest
 import android.annotation.SuppressLint
@@ -20,10 +20,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.app.ActivityCompat
 import androidx.viewpager2.widget.ViewPager2
-import com.example.locationdemoproject.adapter.ViewPagerAdapter
-import com.example.locationdemoproject.fragments.DeviceInfoFragment
-import com.example.locationdemoproject.fragments.LocationFragment
-import com.example.locationdemoproject.fragments.NetworkFragment
+import com.instantwebb.deviceinfo.adapter.ViewPagerAdapter
+import com.instantwebb.deviceinfo.fragments.DeviceInfoFragment
+import com.instantwebb.deviceinfo.fragments.LocationFragment
+import com.instantwebb.deviceinfo.fragments.NetworkFragment
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.google.android.material.tabs.TabLayout
