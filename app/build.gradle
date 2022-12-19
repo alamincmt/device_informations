@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.locationdemoproject'
+    namespace 'com.instantwebb.deviceinfo'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.locationdemoproject"
+        applicationId "com.instantwebb.deviceinfo"
         minSdk 21
         targetSdk 33
         versionCode 1

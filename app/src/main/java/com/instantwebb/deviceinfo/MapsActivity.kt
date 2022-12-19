@@ -1,4 +1,4 @@
-package com.example.locationdemoproject
+package com.instantwebb.deviceinfo
 
 import android.Manifest
 import android.content.pm.PackageManager
@@ -6,12 +6,12 @@ import android.graphics.Color
 import android.os.Bundle
 import androidx.core.app.ActivityCompat
 import androidx.fragment.app.FragmentActivity
-import com.example.locationdemoproject.databinding.ActivityMapsBinding
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.*
+import com.instantwebb.deviceinfo.databinding.ActivityMapsBinding
 
 
 class MapsActivity : FragmentActivity(), OnMapReadyCallback {
