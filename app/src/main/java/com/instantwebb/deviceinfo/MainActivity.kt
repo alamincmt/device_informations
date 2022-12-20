@@ -1,31 +1,13 @@
 package com.instantwebb.deviceinfo
 
-import android.content.Intent
-import android.net.ConnectivityManager
-import android.os.Build
 import android.os.Bundle
-import android.util.Log
-import android.view.View
-import android.widget.Toast
-import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.viewpager2.widget.ViewPager2
 import com.instantwebb.deviceinfo.adapter.ViewPagerAdapter
-import com.instantwebb.deviceinfo.fragments.DeviceInfoFragment
-import com.instantwebb.deviceinfo.fragments.LocationFragment
-import com.instantwebb.deviceinfo.fragments.NetworkFragment
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
-import java.io.BufferedInputStream
-import java.io.BufferedReader
-import java.io.InputStream
-import java.io.InputStreamReader
-import java.net.*
-import java.util.*
-import java.util.concurrent.Callable
-import java.util.concurrent.ExecutionException
-import java.util.concurrent.FutureTask
+import com.instantwebb.deviceinfo.fragments.*
 
 
 open class MainActivity : AppCompatActivity() {
@@ -52,6 +34,8 @@ open class MainActivity : AppCompatActivity() {
         adapter.addFragment(LocationFragment(), "Location")
         adapter.addFragment(DeviceInfoFragment(), "Device Info")
         adapter.addFragment(NetworkFragment(), "Network")
+        adapter.addFragment(BatteryInfoFragment(), "Battery")
+        adapter.addFragment(MemoryInfoFragment(), "Memory")
 
         // Adding the Adapter to the ViewPager
         viewPager2.adapter = adapter
@@ -63,6 +47,10 @@ open class MainActivity : AppCompatActivity() {
                 tab.text = "Device Info"
             } else if (position == 2) {
                 tab.text = "Network"
+            } else if (position == 3) {
+                tab.text = "Battery"
+            } else if (position == 4) {
+                tab.text = "Memory"
             }
 
         }.attach()
