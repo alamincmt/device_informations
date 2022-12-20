@@ -83,6 +83,7 @@ class LocationFragment : Fragment() {
                     binding.tvLatLon.text = "${location.latitude},${location.longitude}"
                     binding.tvCountry.text = list[0].countryName.toString()
                     binding.tvCountryCode.text = list[0].countryCode.toString()
+                    binding.tvPostalCode.text = list[0].postalCode.toString()
                 }
             } else {
                 val intent = Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS)
