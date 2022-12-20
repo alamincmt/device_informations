@@ -90,7 +90,12 @@ class DeviceInfoFragment : Fragment() {
             var advertId: String? = null
             try {
                 advertId = idInfo!!.id
-                binding.tvDeviceAdId.text = advertId
+                if(advertId !=null){
+                    requireActivity().runOnUiThread(Runnable {
+                        binding.tvDeviceAdId.text = advertId
+                    })
+                }
+
             } catch (e: NullPointerException) {
                 e.printStackTrace()
             }

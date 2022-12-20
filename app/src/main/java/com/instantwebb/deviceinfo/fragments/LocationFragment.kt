@@ -31,18 +31,16 @@ class LocationFragment : Fragment() {
     private lateinit var mFusedLocationClient: FusedLocationProviderClient
     private val permissionId = 2
     var newAddress: String? = null
-    // inflate the layout
     private val binding get() = _binding!!
 
-    companion object{
+    companion object {
         private var instance: LocationFragment? = null
 
-        fun getInstance(): LocationFragment{
+        fun getInstance(): LocationFragment {
 
             return instance!!
         }
     }
-
 
     fun getPermissionResult(grantResults: IntArray, requestCode: Int) {
         if (requestCode == permissionId) {
@@ -51,7 +49,6 @@ class LocationFragment : Fragment() {
             }
         }
     }
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -81,7 +78,8 @@ class LocationFragment : Fragment() {
                 mFusedLocationClient.lastLocation.addOnCompleteListener(requireActivity()) { task ->
                     val location: Location = task.result
                     val geocoder = Geocoder(requireContext(), Locale.getDefault())
-                    val list: List<Address>? = geocoder.getFromLocation(location.latitude, location.longitude, 3)
+                    val list: List<Address>? =
+                        geocoder.getFromLocation(location.latitude, location.longitude, 3)
                     val fullAddress = getFormattedAddress(list!!)
                     binding.tvCurrentLocation.text = fullAddress
                     binding.tvLatLon.text = "${location.latitude},${location.longitude}"
@@ -89,7 +87,8 @@ class LocationFragment : Fragment() {
                     binding.tvCountryCode.text = list[0].countryCode.toString()
                     binding.tvPostalCode.text = list[0].postalCode.toString()
 
-                    var locationURL = "https://www.google.com/maps/search/?api=1&query=${location.latitude},${location.longitude}";
+                    var locationURL =
+                        "https://www.google.com/maps/search/?api=1&query=${location.latitude},${location.longitude}";
                     generateQRCodeImage(locationURL)
                 }
             } else {
@@ -102,7 +101,8 @@ class LocationFragment : Fragment() {
     }
 
     private fun isLocationEnabled(): Boolean {
-        val locationManager: LocationManager = requireContext().getSystemService(Context.LOCATION_SERVICE) as LocationManager
+        val locationManager: LocationManager =
+            requireContext().getSystemService(Context.LOCATION_SERVICE) as LocationManager
         return locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER) || locationManager.isProviderEnabled(
             LocationManager.NETWORK_PROVIDER
         )
@@ -186,7 +186,7 @@ class LocationFragment : Fragment() {
         return newAddress
     }
 
-    private fun generateQRCodeImage(qrCodeText: String){
+    private fun generateQRCodeImage(qrCodeText: String) {
         var qrgEncoder = QRGEncoder(qrCodeText, null, QRGContents.Type.TEXT, 400)
         qrgEncoder.colorBlack = Color.WHITE
         qrgEncoder.colorWhite = Color.BLUE
