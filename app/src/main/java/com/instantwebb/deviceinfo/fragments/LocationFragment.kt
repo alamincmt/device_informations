@@ -5,15 +5,19 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.graphics.Color
 import android.location.Address
 import android.location.Geocoder
 import android.location.Location
 import android.location.LocationManager
 import android.os.Bundle
 import android.provider.Settings
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidmads.library.qrgenearator.QRGContents
+import androidmads.library.qrgenearator.QRGEncoder
 import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
 import com.google.android.gms.location.FusedLocationProviderClient
@@ -84,6 +88,9 @@ class LocationFragment : Fragment() {
                     binding.tvCountry.text = list[0].countryName.toString()
                     binding.tvCountryCode.text = list[0].countryCode.toString()
                     binding.tvPostalCode.text = list[0].postalCode.toString()
+
+                    var locationURL = "https://www.google.com/maps/search/?api=1&query=${location.latitude},${location.longitude}";
+                    generateQRCodeImage(locationURL)
                 }
             } else {
                 val intent = Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS)
@@ -177,6 +184,17 @@ class LocationFragment : Fragment() {
         }
 
         return newAddress
+    }
+
+    private fun generateQRCodeImage(qrCodeText: String){
+        var qrgEncoder = QRGEncoder(qrCodeText, null, QRGContents.Type.TEXT, 400)
+        qrgEncoder.colorBlack = Color.WHITE
+        qrgEncoder.colorWhite = Color.BLUE
+        try {
+            binding.ivQRCode.setImageBitmap(qrgEncoder.bitmap)
+        } catch (e: java.lang.Exception) {
+            Log.v(LocationFragment.javaClass.name, e.toString())
+        }
     }
 
 }
