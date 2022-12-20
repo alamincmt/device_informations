@@ -37,17 +37,21 @@ android {
 }
 
 dependencies {
-
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.5.1'
     implementation 'com.google.android.material:material:1.7.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'com.google.firebase:firebase-crashlytics-buildtools:2.9.2'
     implementation 'com.google.android.gms:play-services-maps:18.1.0'
+    implementation 'com.google.android.gms:play-services-ads-base:21.4.0:18.0.1'
+    implementation 'com.google.android.gms:play-services-ads-identifier:18.0.1'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.4'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
     implementation 'com.google.android.gms:play-services-location:21.0.1'
     implementation 'com.google.android.gms:play-services-maps:18.1.0'
     implementation 'com.an.deviceinfo:deviceinfo:0.1.5'
+
+    // QR code generator library
+    implementation 'com.github.androidmads:QRGenerator:1.0.1'
 }
