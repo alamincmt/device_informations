@@ -13,6 +13,7 @@
            android:layout_height="wrap_content"
            android:layout_marginTop="10dp"
            android:layout_marginStart="10dp"
+           android:layout_marginBottom="10dp"
            android:layout_marginEnd="10dp"
            app:cardCornerRadius="10dp">
 
@@ -27,13 +28,14 @@
                    android:paddingLeft="10dp"
                    android:gravity="center"
                    android:clickable="true"
+                   android:padding="5dp"
                    android:minHeight="40dp"
                    android:orientation="vertical">
 
                    <androidx.appcompat.widget.AppCompatTextView
                        android:layout_width="match_parent"
                        android:layout_height="wrap_content"
-                       android:textSize="15dp"
+                       android:textSize="17dp"
                        android:textStyle="bold"
                        android:text="Current Location"
                        android:textColor="@color/black"/>
@@ -41,12 +43,15 @@
                    <androidx.appcompat.widget.AppCompatTextView
                        android:layout_width="match_parent"
                        android:layout_height="wrap_content"
+                       android:textSize="15dp"
+                       android:layout_marginTop="5dp"
                        android:textColor="@color/colorBlue"
                        android:id="@+id/tvCurrentLocation"/>
 
                    <View
                        android:layout_width="match_parent"
                        android:layout_height="1dp"
+                       android:layout_marginTop="3dp"
                        android:background="#f2f2f2" />
 
                </LinearLayout>
@@ -56,6 +61,7 @@
                    android:layout_height="wrap_content"
                    android:paddingLeft="10dp"
                    android:gravity="center"
+                   android:padding="5dp"
                    android:clickable="true"
                    android:minHeight="40dp"
                    android:orientation="vertical">
@@ -63,7 +69,7 @@
                    <androidx.appcompat.widget.AppCompatTextView
                        android:layout_width="match_parent"
                        android:layout_height="wrap_content"
-                       android:textSize="15dp"
+                       android:textSize="17dp"
                        android:textStyle="bold"
                        android:text="Device latitude Longitude"
                        android:textColor="@color/black"/>
@@ -72,11 +78,14 @@
                        android:layout_width="match_parent"
                        android:layout_height="wrap_content"
                        android:textColor="@color/colorBlue"
+                       android:textSize="15dp"
+                       android:layout_marginTop="5dp"
                        android:id="@+id/tvLatLon"/>
 
                    <View
                        android:layout_width="match_parent"
                        android:layout_height="1dp"
+                       android:layout_marginTop="3dp"
                        android:background="#f2f2f2" />
 
                </LinearLayout>
@@ -87,13 +96,14 @@
                    android:paddingLeft="10dp"
                    android:gravity="center"
                    android:clickable="true"
+                   android:padding="5dp"
                    android:minHeight="40dp"
                    android:orientation="vertical">
 
                    <androidx.appcompat.widget.AppCompatTextView
                        android:layout_width="match_parent"
                        android:layout_height="wrap_content"
-                       android:textSize="15dp"
+                       android:textSize="17dp"
                        android:textStyle="bold"
                        android:text="Country"
                        android:textColor="@color/black"/>
@@ -102,11 +112,14 @@
                        android:layout_width="match_parent"
                        android:layout_height="wrap_content"
                        android:textColor="@color/colorBlue"
+                       android:layout_marginTop="5dp"
+                       android:textSize="15dp"
                        android:id="@+id/tvCountry"/>
 
                    <View
                        android:layout_width="match_parent"
                        android:layout_height="1dp"
+                       android:layout_marginTop="3dp"
                        android:background="#f2f2f2" />
 
                </LinearLayout>
@@ -114,7 +127,7 @@
                <LinearLayout
                    android:layout_width="match_parent"
                    android:layout_height="wrap_content"
-                   android:paddingLeft="10dp"
+                   android:paddingLeft="5dp"
                    android:gravity="center"
                    android:clickable="true"
                    android:minHeight="40dp"
@@ -123,7 +136,7 @@
                    <androidx.appcompat.widget.AppCompatTextView
                        android:layout_width="match_parent"
                        android:layout_height="wrap_content"
-                       android:textSize="15dp"
+                       android:textSize="17dp"
                        android:textStyle="bold"
                        android:text="Country Code"
                        android:textColor="@color/black"/>
@@ -131,13 +144,44 @@
                    <androidx.appcompat.widget.AppCompatTextView
                        android:layout_width="match_parent"
                        android:layout_height="wrap_content"
+                       android:layout_marginTop="5dp"
+                       android:textSize="15dp"
                        android:textColor="@color/colorBlue"
                        android:id="@+id/tvCountryCode"/>
 
                    <View
                        android:layout_width="match_parent"
                        android:layout_height="1dp"
+                       android:layout_marginTop="3dp"
                        android:background="#f2f2f2" />
+
+               </LinearLayout>
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:paddingLeft="10dp"
+                   android:padding="5dp"
+                   android:gravity="center"
+                   android:clickable="true"
+                   android:minHeight="40dp"
+                   android:orientation="vertical">
+
+                   <androidx.appcompat.widget.AppCompatTextView
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:textSize="17dp"
+                       android:textStyle="bold"
+                       android:text="Postal Code"
+                       android:textColor="@color/black"/>
+
+                   <androidx.appcompat.widget.AppCompatTextView
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:textSize="15dp"
+                       android:layout_marginTop="5dp"
+                       android:textColor="@color/colorBlue"
+                       android:id="@+id/tvPostalCode"/>
 
                </LinearLayout>
 
