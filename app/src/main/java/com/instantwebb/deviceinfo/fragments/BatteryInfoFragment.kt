@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.an.deviceinfo.device.model.Battery
 import com.an.deviceinfo.device.model.Device
 import com.instantwebb.deviceinfo.databinding.FragmentBatteryInfoBinding
 import com.instantwebb.deviceinfo.databinding.FragmentDeviceBinding
@@ -25,26 +26,17 @@ class BatteryInfoFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        getDeviceInfo()
+        getBatteryInfo()
     }
 
-    private fun getDeviceInfo() {
-        val device = Device(requireContext())
-        binding.tvManufacturer.text = device.manufacturer
-        binding.tvModel.text = device.model
-        binding.tvBuildVersion.text = device.buildVersionCodeName
-        binding.tvProduct.text = device.product
-        binding.tvFingerprint.text = device.fingerprint
-        binding.tvHardware.text = device.hardware
-        binding.tvDevice.text = device.device
-        binding.tvBoard.text = device.board
-        binding.tvOsVersion.text = device.osVersion
-        binding.tvLanguage.text = device.language
-        binding.tvSdkVersion.text = device.sdkVersion.toString()
-        binding.tvHeight.text = device.screenHeight.toString()
-        binding.tvWidth.text = device.screenWidth.toString()
-        binding.tvBuildBrand.text = device.buildBrand
-
+    private fun getBatteryInfo() {
+        val battery = Battery(requireContext())
+        binding.tvBatteryPercentage.text = battery.batteryPercent.toString()
+        binding.tvPhoneCharging.text = battery.isPhoneCharging.toString()
+        binding.tvBatteryHealth.text = battery.batteryHealth.toString()
+        binding.tvBatteryTechnology.text = battery.batteryTechnology
+        binding.tvTemperature.text = battery.batteryTemperature.toString()
+        binding.tvVoltage.text = battery.batteryVoltage.toString()
+        binding.tvChargingSource.text = battery.chargingSource
     }
-
 }

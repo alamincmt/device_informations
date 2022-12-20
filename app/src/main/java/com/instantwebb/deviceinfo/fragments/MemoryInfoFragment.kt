@@ -1,11 +1,12 @@
 package com.instantwebb.deviceinfo.fragments
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.an.deviceinfo.device.model.Device
+import com.an.deviceinfo.device.model.Memory
 import com.instantwebb.deviceinfo.databinding.FragmentRamInfoBinding
 
 class MemoryInfoFragment : Fragment() {
@@ -24,26 +25,26 @@ class MemoryInfoFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        getDeviceInfo()
+        getMemoryInfo()
     }
 
-    private fun getDeviceInfo() {
-        val device = Device(requireContext())
-        binding.tvManufacturer.text = device.manufacturer
-        binding.tvModel.text = device.model
-        binding.tvBuildVersion.text = device.buildVersionCodeName
-        binding.tvProduct.text = device.product
-        binding.tvFingerprint.text = device.fingerprint
-        binding.tvHardware.text = device.hardware
-        binding.tvDevice.text = device.device
-        binding.tvBoard.text = device.board
-        binding.tvOsVersion.text = device.osVersion
-        binding.tvLanguage.text = device.language
-        binding.tvSdkVersion.text = device.sdkVersion.toString()
-        binding.tvHeight.text = device.screenHeight.toString()
-        binding.tvWidth.text = device.screenWidth.toString()
-        binding.tvBuildBrand.text = device.buildBrand
-
+    @SuppressLint("SetTextI18n")
+    private fun getMemoryInfo() {
+        val memory = Memory(requireContext())
+        binding.tvexternalMemeory.text = memory.isHasExternalSDCard.toString()
+        binding.tvRam.text = convertToGb(memory.totalRAM).toString()+" GB"
+        binding.tvInternalMemorySpace.text = convertToGb(memory.totalInternalMemorySize).toString()+" GB"
+        binding.tvAvailableMemorySpace.text = convertToGb(memory.availableInternalMemorySize).toString()+" GB"
+        binding.tvTotalExternalMemorySpace.text = convertToGb(memory.totalExternalMemorySize).toString()+" GB"
+        binding.tvAvailableExternalMemorySpace.text = convertToGb(memory.availableExternalMemorySize).toString()+" GB"
     }
 
+    private fun convertToGb(valInBytes: Long): Float {
+        return java.lang.Float.valueOf(
+            String.format(
+                "%.2f",
+                valInBytes.toFloat() / (1024 * 1024 * 1024)
+            )
+        )
+    }
 }
