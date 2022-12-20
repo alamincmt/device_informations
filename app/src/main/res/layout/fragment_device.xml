@@ -117,7 +117,77 @@
                         android:layout_marginTop="5dp"
                         android:textSize="15dp"
                         android:id="@+id/tvBuildVersion"/>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="3dp"
+                        android:background="#f2f2f2" />
 
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:gravity="center"
+                    android:clickable="true"
+                    android:padding="5dp"
+                    android:minHeight="40dp"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="17dp"
+                        android:textStyle="bold"
+                        android:text="Device Advertisement ID"
+                        android:textColor="@color/black"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorBlue"
+                        android:layout_marginTop="5dp"
+                        android:textSize="15dp"
+                        android:id="@+id/tvDeviceAdId"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="3dp"
+                        android:background="#f2f2f2" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:gravity="center"
+                    android:clickable="true"
+                    android:padding="5dp"
+                    android:minHeight="40dp"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="17dp"
+                        android:textStyle="bold"
+                        android:text="Device UUID"
+                        android:textColor="@color/black"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorBlue"
+                        android:layout_marginTop="5dp"
+                        android:textSize="15dp"
+                        android:id="@+id/tvUuid"/>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="3dp"
+                        android:background="#f2f2f2" />
 
                 </LinearLayout>
 
@@ -215,6 +285,11 @@
                         android:textSize="15dp"
                         android:id="@+id/tvHardware"/>
 
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="3dp"
+                        android:background="#f2f2f2" />
 
                 </LinearLayout>
 
@@ -311,7 +386,11 @@
                         android:layout_marginTop="5dp"
                         android:textSize="15dp"
                         android:id="@+id/tvBuildBrand"/>
-
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="3dp"
+                        android:background="#f2f2f2" />
 
                 </LinearLayout>
 
@@ -408,7 +487,11 @@
                         android:layout_marginTop="5dp"
                         android:textSize="15dp"
                         android:id="@+id/tvSdkVersion"/>
-
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="3dp"
+                        android:background="#f2f2f2" />
 
                 </LinearLayout>
 
