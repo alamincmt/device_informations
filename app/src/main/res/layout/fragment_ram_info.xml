@@ -39,7 +39,7 @@
                         android:layout_height="wrap_content"
                         android:textSize="17dp"
                         android:textStyle="bold"
-                        android:text="Manufacturer"
+                        android:text="Has External Memory Card"
                         android:textColor="@color/black"/>
 
                     <androidx.appcompat.widget.AppCompatTextView
@@ -48,7 +48,7 @@
                         android:textSize="15dp"
                         android:layout_marginTop="5dp"
                         android:textColor="@color/colorBlue"
-                        android:id="@+id/tvManufacturer"/>
+                        android:id="@+id/tvexternalMemeory"/>
 
                     <View
                         android:layout_width="match_parent"
@@ -73,7 +73,7 @@
                         android:layout_height="wrap_content"
                         android:textSize="17dp"
                         android:textStyle="bold"
-                        android:text="Model"
+                        android:text="Total Ram"
                         android:textColor="@color/black"/>
 
                     <androidx.appcompat.widget.AppCompatTextView
@@ -82,7 +82,7 @@
                         android:textSize="15dp"
                         android:layout_marginTop="5dp"
                         android:textColor="@color/colorBlue"
-                        android:id="@+id/tvModel"/>
+                        android:id="@+id/tvRam"/>
 
                     <View
                         android:layout_width="match_parent"
@@ -107,7 +107,7 @@
                         android:layout_height="wrap_content"
                         android:textSize="17dp"
                         android:textStyle="bold"
-                        android:text="Release Build Version"
+                        android:text="Total Internal Memory Space"
                         android:textColor="@color/black"/>
 
                     <androidx.appcompat.widget.AppCompatTextView
@@ -116,7 +116,7 @@
                         android:textColor="@color/colorBlue"
                         android:layout_marginTop="5dp"
                         android:textSize="15dp"
-                        android:id="@+id/tvBuildVersion"/>
+                        android:id="@+id/tvInternalMemorySpace"/>
 
 
                 </LinearLayout>
@@ -136,7 +136,7 @@
                         android:layout_height="wrap_content"
                         android:textSize="17dp"
                         android:textStyle="bold"
-                        android:text="Product"
+                        android:text="Available Memory Space"
                         android:textColor="@color/black"/>
 
                     <androidx.appcompat.widget.AppCompatTextView
@@ -145,7 +145,7 @@
                         android:textSize="15dp"
                         android:layout_marginTop="5dp"
                         android:textColor="@color/colorBlue"
-                        android:id="@+id/tvProduct"/>
+                        android:id="@+id/tvAvailableMemorySpace"/>
 
                     <View
                         android:layout_width="match_parent"
@@ -170,7 +170,7 @@
                         android:layout_height="wrap_content"
                         android:textSize="17dp"
                         android:textStyle="bold"
-                        android:text="Fingerprint"
+                        android:text="Total External Memory Space"
                         android:textColor="@color/black"/>
 
                     <androidx.appcompat.widget.AppCompatTextView
@@ -179,7 +179,7 @@
                         android:textSize="15dp"
                         android:layout_marginTop="5dp"
                         android:textColor="@color/colorBlue"
-                        android:id="@+id/tvFingerprint"/>
+                        android:id="@+id/tvTotalExternalMemorySpace"/>
 
                     <View
                         android:layout_width="match_parent"
@@ -204,7 +204,7 @@
                         android:layout_height="wrap_content"
                         android:textSize="17dp"
                         android:textStyle="bold"
-                        android:text="Hardware"
+                        android:text="Available External Memory Space"
                         android:textColor="@color/black"/>
 
                     <androidx.appcompat.widget.AppCompatTextView
@@ -213,268 +213,9 @@
                         android:textColor="@color/colorBlue"
                         android:layout_marginTop="5dp"
                         android:textSize="15dp"
-                        android:id="@+id/tvHardware"/>
-
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="10dp"
-                    android:gravity="center"
-                    android:clickable="true"
-                    android:padding="5dp"
-                    android:minHeight="40dp"
-                    android:orientation="vertical">
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textSize="17dp"
-                        android:textStyle="bold"
-                        android:text="Device"
-                        android:textColor="@color/black"/>
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textSize="15dp"
-                        android:layout_marginTop="5dp"
-                        android:textColor="@color/colorBlue"
-                        android:id="@+id/tvDevice"/>
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_marginTop="3dp"
-                        android:background="#f2f2f2" />
+                        android:id="@+id/tvAvailableExternalMemorySpace"/>
 
                 </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="10dp"
-                    android:gravity="center"
-                    android:clickable="true"
-                    android:padding="5dp"
-                    android:minHeight="40dp"
-                    android:orientation="vertical">
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textSize="17dp"
-                        android:textStyle="bold"
-                        android:text="Board"
-                        android:textColor="@color/black"/>
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textSize="15dp"
-                        android:layout_marginTop="5dp"
-                        android:textColor="@color/colorBlue"
-                        android:id="@+id/tvBoard"/>
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_marginTop="3dp"
-                        android:background="#f2f2f2" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="10dp"
-                    android:gravity="center"
-                    android:clickable="true"
-                    android:padding="5dp"
-                    android:minHeight="40dp"
-                    android:orientation="vertical">
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textSize="17dp"
-                        android:textStyle="bold"
-                        android:text="Build Brand"
-                        android:textColor="@color/black"/>
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/colorBlue"
-                        android:layout_marginTop="5dp"
-                        android:textSize="15dp"
-                        android:id="@+id/tvBuildBrand"/>
-
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="10dp"
-                    android:gravity="center"
-                    android:clickable="true"
-                    android:padding="5dp"
-                    android:minHeight="40dp"
-                    android:orientation="vertical">
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textSize="17dp"
-                        android:textStyle="bold"
-                        android:text="OS Version"
-                        android:textColor="@color/black"/>
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textSize="15dp"
-                        android:layout_marginTop="5dp"
-                        android:textColor="@color/colorBlue"
-                        android:id="@+id/tvOsVersion"/>
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_marginTop="3dp"
-                        android:background="#f2f2f2" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="10dp"
-                    android:gravity="center"
-                    android:clickable="true"
-                    android:padding="5dp"
-                    android:minHeight="40dp"
-                    android:orientation="vertical">
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textSize="17dp"
-                        android:textStyle="bold"
-                        android:text="Language"
-                        android:textColor="@color/black"/>
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textSize="15dp"
-                        android:layout_marginTop="5dp"
-                        android:textColor="@color/colorBlue"
-                        android:id="@+id/tvLanguage"/>
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_marginTop="3dp"
-                        android:background="#f2f2f2" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="10dp"
-                    android:gravity="center"
-                    android:clickable="true"
-                    android:padding="5dp"
-                    android:minHeight="40dp"
-                    android:orientation="vertical">
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textSize="17dp"
-                        android:textStyle="bold"
-                        android:text="SDK Version"
-                        android:textColor="@color/black"/>
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/colorBlue"
-                        android:layout_marginTop="5dp"
-                        android:textSize="15dp"
-                        android:id="@+id/tvSdkVersion"/>
-
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="10dp"
-                    android:gravity="center"
-                    android:clickable="true"
-                    android:padding="5dp"
-                    android:minHeight="40dp"
-                    android:orientation="vertical">
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textSize="17dp"
-                        android:textStyle="bold"
-                        android:text="Screen Height"
-                        android:textColor="@color/black"/>
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textSize="15dp"
-                        android:layout_marginTop="5dp"
-                        android:textColor="@color/colorBlue"
-                        android:id="@+id/tvHeight"/>
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_marginTop="3dp"
-                        android:background="#f2f2f2" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="10dp"
-                    android:gravity="center"
-                    android:clickable="true"
-                    android:padding="5dp"
-                    android:minHeight="40dp"
-                    android:orientation="vertical">
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textSize="17dp"
-                        android:textStyle="bold"
-                        android:text="Screen With"
-                        android:textColor="@color/black"/>
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textSize="15dp"
-                        android:layout_marginTop="5dp"
-                        android:textColor="@color/colorBlue"
-                        android:id="@+id/tvWidth"/>
-
-
-                </LinearLayout>
-
 
             </LinearLayout>
 
