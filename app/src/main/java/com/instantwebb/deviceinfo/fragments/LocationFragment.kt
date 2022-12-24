@@ -76,20 +76,35 @@ class LocationFragment : Fragment() {
         if (checkPermissions()) {
             if (isLocationEnabled()) {
                 mFusedLocationClient.lastLocation.addOnCompleteListener(requireActivity()) { task ->
-                    val location: Location = task.result
-                    val geocoder = Geocoder(requireContext(), Locale.getDefault())
-                    val list: List<Address>? =
-                        geocoder.getFromLocation(location.latitude, location.longitude, 3)
-                    val fullAddress = getFormattedAddress(list!!)
-                    binding.tvCurrentLocation.text = fullAddress
-                    binding.tvLatLon.text = "${location.latitude},${location.longitude}"
-                    binding.tvCountry.text = list[0].countryName.toString()
-                    binding.tvCountryCode.text = list[0].countryCode.toString()
-                    binding.tvPostalCode.text = list[0].postalCode.toString()
+                    try{
+                        val location: Location = task.result
+                        if(location != null){
+                            val geocoder = Geocoder(requireContext(), Locale.getDefault())
+                            val list: List<Address>? = geocoder.getFromLocation(location.latitude, location.longitude, 3)
+                            val fullAddress = getFormattedAddress(list!!)
+                            binding.tvCurrentLocation.text = fullAddress
+                            binding.tvLatLon.text = "${location.latitude},${location.longitude}"
+                            binding.tvCountry.text = list[0].countryName.toString()
+                            binding.tvCountryCode.text = list[0].countryCode.toString()
+                            binding.tvPostalCode.text = list[0].postalCode.toString()
 
-                    var locationURL =
-                        "https://www.google.com/maps/search/?api=1&query=${location.latitude},${location.longitude}";
-                    generateQRCodeImage(locationURL)
+                            var locationURL =
+                                "https://www.google.com/maps/search/?api=1&query=${location.latitude},${location.longitude}";
+                            generateQRCodeImage(locationURL)
+                        }else{
+                            binding.tvCurrentLocation.text = ""
+                            binding.tvLatLon.text = ""
+                            binding.tvCountry.text = ""
+                            binding.tvCountryCode.text = ""
+                            binding.tvPostalCode.text = ""
+                        }
+                    }catch (exception: Exception){
+                        binding.tvCurrentLocation.text = ""
+                        binding.tvLatLon.text = ""
+                        binding.tvCountry.text = ""
+                        binding.tvCountryCode.text = ""
+                        binding.tvPostalCode.text = ""
+                    }
                 }
             } else {
                 val intent = Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS)
